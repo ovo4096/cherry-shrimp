@@ -6,7 +6,8 @@
   "scripts": {
     "start": "electron .",
     "dev": "electron . --debug",
-    "lint": "standard --verbose | snazzy"
+    "lint": "standard --verbose | snazzy",
+    "test": "mocha tests && npm run lint"
   },
   "repository": {
     "type": "git",
@@ -19,8 +20,22 @@
   },
   "homepage": "https://github.com/owwo/cherry-shrimp#readme",
   "devDependencies": {
+    "chai": "^3.5.0",
+    "chai-as-promised": "^6.0.0",
     "electron": "~1.6.2",
+    "mocha": "^3.2.0",
     "snazzy": "^6.0.0",
+    "spectron": "^3.6.0",
     "standard": "^9.0.2"
+  },
+  "dependencies": {},
+  "keywords": [
+    "xiami",
+    "client"
+  ],
+  "standard": {
+    "env": {
+      "mocha": true
+    }
   }
 }
