@@ -1,0 +1,24 @@
+{
+  "name": "cherry-shrimp",
+  "version": "1.0.0",
+  "description": "This is a third-party Xiami client that supports macOS, Linux and Windows",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --debug",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/owwo/cherry-shrimp.git"
+  },
+  "author": "owwo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/owwo/cherry-shrimp/issues"
+  },
+  "homepage": "https://github.com/owwo/cherry-shrimp#readme",
+  "devDependencies": {
+    "electron": "~1.6.2"
+  }
+}
