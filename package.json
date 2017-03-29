@@ -4,7 +4,7 @@
   "description": "This is a third-party Xiami client that supports macOS, Linux and Windows",
   "main": "main.js",
   "scripts": {
-    "start": "electron .",
+    "start": "node ./process/renderer/build/build.js && electron ./process/main/src/main.js",
     "dev": "electron ./process/main/src/main.js --debug",
     "lint": "eslint --ext .js,.vue .",
     "test": "npm run lint"

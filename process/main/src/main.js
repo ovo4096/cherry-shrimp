@@ -1,11 +1,14 @@
 const { app, BrowserWindow } = require('electron')
+const path = require('path')
 const url = require('url')
+
 const debug = /--debug/.test(process.argv[2])
-const rendererPath = '../../renderer'
 
 let mainWindow
 
 function createMainWindow () {
+  const rendererPath = '../../renderer'
+
   if (debug) {
     const { ready } = require(`${rendererPath}/build/dev-server`)
     const config = require(`${rendererPath}/config`)
@@ -28,20 +31,30 @@ function createMainWindow () {
         width: 800,
         height: 600
       })
-
       mainWindow.loadURL(urlPath)
-
-      if (debug) {
-        mainWindow.webContents.openDevTools()
-        mainWindow.maximize()
-      }
-
+      mainWindow.webContents.openDevTools()
+      mainWindow.maximize()
       mainWindow.on('closed', () => {
         mainWindow = null
       })
     })
   } else {
+    let urlPath = url.format({
+      pathname: path.join(__dirname, rendererPath, 'dist/index.html'),
+      protocol: 'file:',
+      slashes: true
+    })
 
+    console.log(__dirname)
+
+    mainWindow = new BrowserWindow({
+      width: 800,
+      height: 600
+    })
+    mainWindow.loadURL(urlPath)
+    mainWindow.on('closed', () => {
+      mainWindow = null
+    })
   }
 }
 
