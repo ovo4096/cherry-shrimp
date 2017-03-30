@@ -5,10 +5,10 @@
   "main": "./src/main/main.js",
   "scripts": {
     "start": "node ./build/renderer/build.js && electron .",
-    "dev": "electron . --debug",
+    "dev": "electron ./build/main/dev",
     "lint": "eslint --ext .js,.vue .",
     "test": "npm run lint",
-    "build": "electron-packager ."
+    "build": "node ./build/renderer/build.js && node ./build/main/build.js"
   },
   "repository": {
     "type": "git",
