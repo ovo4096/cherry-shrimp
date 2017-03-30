@@ -1,3 +1,4 @@
+const root = require('app-root-path')
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
 const url = require('url')
@@ -7,11 +8,9 @@ const debug = /--debug/.test(process.argv[2])
 let mainWindow
 
 function createMainWindow () {
-  const rendererPath = '../../renderer'
-
   if (debug) {
-    const { ready } = require(`${rendererPath}/build/dev-server`)
-    const config = require(`${rendererPath}/config`)
+    const { ready } = require(`${root}/build/renderer/dev-server`)
+    const config = require(`${root}/config/renderer`)
 
     let port = process.env.PORT || config.dev.port
     let urlPath = url.format({
@@ -40,12 +39,10 @@ function createMainWindow () {
     })
   } else {
     let urlPath = url.format({
-      pathname: path.join(__dirname, rendererPath, 'dist/index.html'),
+      pathname: `${root}/dist/renderer/index.html`,
       protocol: 'file:',
       slashes: true
     })
-
-    console.log(__dirname)
 
     mainWindow = new BrowserWindow({
       width: 800,
