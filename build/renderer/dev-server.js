@@ -1,7 +1,6 @@
 require('./check-versions')()
 
-const root = require('app-root-path')
-const config = require(`${root}/config/renderer`)
+const config = require('../../config/renderer')
 if (!process.env.NODE_ENV) {
   process.env.NODE_ENV = JSON.parse(config.dev.env.NODE_ENV)
 }

@@ -1,7 +1,6 @@
-const root = require('app-root-path')
 const chalk = require('chalk')
 const semver = require('semver')
-const packageConfig = require(`${root}/package.json`)
+const packageConfig = require('../../package.json')
 
 function exec (cmd) {
   return require('child_process').execSync(cmd).toString().trim()

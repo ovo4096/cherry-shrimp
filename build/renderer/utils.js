@@ -1,6 +1,5 @@
-const root = require('app-root-path')
 const path = require('path')
-const config = require(`${root}/config/renderer`)
+const config = require('../../config/renderer')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
 exports.assetsPath = function (_path) {

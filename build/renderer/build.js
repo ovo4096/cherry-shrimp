@@ -2,13 +2,12 @@ require('./check-versions')()
 
 process.env.NODE_ENV = 'production'
 
-const root = require('app-root-path')
 const ora = require('ora')
 const rm = require('rimraf')
 const path = require('path')
 const chalk = require('chalk')
 const webpack = require('webpack')
-const config = require(`${root}/config/renderer`)
+const config = require('../../config/renderer')
 const webpackConfig = require('./webpack.prod.conf')
 
 const spinner = ora('building for renderer...')

@@ -1,5 +1,4 @@
-const root = require('app-root-path')
-const config = require(`${root}/config/main`)
+const config = require('../../config/main')
 
 const packager = require('electron-packager')
 const ora = require('ora')

@@ -1,7 +1,6 @@
-const root = require('app-root-path')
 const utils = require('./utils')
 const webpack = require('webpack')
-const config = require(`${root}/config/renderer`)
+const config = require('../../config/renderer')
 const merge = require('webpack-merge')
 const baseWebpackConfig = require('./webpack.base.conf')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
@@ -9,7 +8,7 @@ const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 
 // add hot-reload related code to entry chunks
 Object.keys(baseWebpackConfig.entry).forEach(function (name) {
-  baseWebpackConfig.entry[name] = [`${root}/build/renderer/dev-client`].concat(baseWebpackConfig.entry[name])
+  baseWebpackConfig.entry[name] = ['./build/renderer/dev-client'].concat(baseWebpackConfig.entry[name])
 })
 
 module.exports = merge(baseWebpackConfig, {

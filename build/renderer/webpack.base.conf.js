@@ -1,7 +1,6 @@
-const root = require('app-root-path')
 const path = require('path')
 const utils = require('./utils')
-const config = require(`${root}/config/renderer`)
+const config = require('../../config/renderer')
 const vueLoaderConfig = require('./vue-loader.conf')
 
 function resolve (dir) {
@@ -10,7 +9,7 @@ function resolve (dir) {
 
 module.exports = {
   entry: {
-    app: `./src/renderer/main.js`
+    app: './src/renderer/main.js'
   },
   output: {
     path: config.build.assetsRoot,
