@@ -1,23 +1,35 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
+    <div class="carousel">
+      <a class="carousel-item" href="#one!"><img src="./assets/logo.png"></a>
+      <a class="carousel-item" href="#two!"><img src="./assets/logo.png"></a>
+      <a class="carousel-item" href="#two!"><img src="./assets/logo.png"></a>
+    </div>
+    <ul class="collapsible" data-collapsible="accordion">
+      <li>
+        <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
+        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
+        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+      </li>
+      <li>
+        <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
+        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
+      </li>
+    </ul>
     <router-view></router-view>
   </div>
 </template>
-
 <script>
+import jQuery from 'jquery'
+
 export default {
-  name: 'app'
+  name: 'app',
+  mounted () {
+    jQuery('.carousel').carousel()
+    jQuery('.collapsible').collapsible()
+  }
 }
 </script>
-
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
-</style>

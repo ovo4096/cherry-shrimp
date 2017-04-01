@@ -61,6 +61,15 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
+      },
+      {
+        test: require.resolve('jquery'),
+        loader: 'expose-loader',
+        options: 'jQuery'
+      },
+      {
+        test: require.resolve('materialize-css'),
+        loader: 'imports-loader?jQuery=>window.jQuery'
       }
     ]
   }
