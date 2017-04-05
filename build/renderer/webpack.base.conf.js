@@ -62,20 +62,6 @@ module.exports = {
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]'),
           publicPath: '../../'
         }
-      },
-      {
-        test: require.resolve('jquery'),
-        loader: 'expose-loader',
-        options: 'jQuery'
-      },
-      {
-        test: require.resolve('materialize-css'),
-        loader: 'imports-loader?jQuery=>window.jQuery,define=>false,require=>false,exports=>false'
-      },
-      {
-        test: require.resolve('hammerjs'),
-        loader: 'expose-loader',
-        options: 'Hammer'
       }
     ]
   }
