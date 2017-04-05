@@ -1,41 +1,51 @@
 <template>
-  <div id="app">
-    <div class="carousel">
-      <a class="carousel-item" href="#one!"><img src="./assets/logo.png"></a>
-      <a class="carousel-item" href="#two!"><img src="./assets/logo.png"></a>
-      <a class="carousel-item" href="#two!"><img src="./assets/logo.png"></a>
-    </div>
-    <ul class="collapsible" data-collapsible="accordion">
-      <li>
-        <div class="collapsible-header"><i class="material-icons">filter_drama</i>First</div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-      </li>
-      <li>
-        <div class="collapsible-header"><i class="material-icons">place</i>Second</div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-      </li>
-      <li>
-        <div class="collapsible-header"><i class="material-icons">whatshot</i>Third</div>
-        <div class="collapsible-body"><span>Lorem ipsum dolor sit amet.</span></div>
-      </li>
-    </ul>
-    <div class="collection">
-      <a href="#!" class="collection-item"><span class="badge">1</span>Alan</a>
-      <a href="#!" class="collection-item"><span class="new badge">4</span>Alan</a>
-      <a href="#!" class="collection-item">Alan</a>
-      <a href="#!" class="collection-item"><span class="badge">14</span>Alan</a>
-    </div>
-    <router-view></router-view>
+  <div>
+    <header>
+      <nav>
+        <div class="nav-wrapper">
+          <a href="#" data-activates="mobile-demo" class="button-collapse"><i class="material-icons">menu</i></a>
+          <a href="#!" class="brand-logo center">Logo</a>
+          <ul class="side-nav fixed" id="mobile-demo">
+            <li><a href="sass.html">Sass</a></li>
+            <li><a href="badges.html">Components</a></li>
+            <li><a href="collapsible.html">Javascript</a></li>
+            <li><a href="mobile.html">Mobile</a></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+    <main>
+      Hello, World
+    </main>
+    <footer>
+    </footer>
   </div>
 </template>
-<script>
-import jQuery from 'jquery'
 
-export default {
-  name: 'app',
-  mounted () {
-    jQuery('.carousel').carousel()
-    jQuery('.collapsible').collapsible()
+<script>
+  import jQuery from 'jquery'
+  
+  export default {
+    name: 'app',
+    mounted () {
+      jQuery('.button-collapse').sideNav()
+      jQuery('.collapsible').collapsible()
+    }
   }
-}
 </script>
+
+<style>
+  header,
+  main,
+  footer {
+    padding-left: 300px;
+  }
+  
+  @media only screen and (max-width: 992px) {
+    header,
+    main,
+    footer {
+      padding-left: 0;
+    }
+  }
+</style>

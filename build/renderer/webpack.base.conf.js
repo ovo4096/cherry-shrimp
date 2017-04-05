@@ -70,7 +70,12 @@ module.exports = {
       },
       {
         test: require.resolve('materialize-css'),
-        loader: 'imports-loader?jQuery=>window.jQuery'
+        loader: 'imports-loader?jQuery=>window.jQuery,define=>false,require=>false,exports=>false'
+      },
+      {
+        test: require.resolve('hammerjs'),
+        loader: 'expose-loader',
+        options: 'Hammer'
       }
     ]
   }
