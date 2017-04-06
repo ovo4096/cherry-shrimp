@@ -7,8 +7,8 @@ let mainWindow
 
 function createMainWindow () {
   mainWindow = new BrowserWindow({
-    width: 1024,
-    height: 768
+    width: 1025,
+    height: 769
   })
 
   let urlPath
