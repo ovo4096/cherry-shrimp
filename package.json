@@ -14,14 +14,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/owwo/cherry-shrimp.git"
+    "url": "git+https://github.com/ovo4096/cherry-shrimp.git"
   },
-  "author": "owwo",
+  "author": "ovo4096",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/owwo/cherry-shrimp/issues"
+    "url": "https://github.com/ovo4096/cherry-shrimp/issues"
   },
-  "homepage": "https://github.com/owwo/cherry-shrimp#readme",
+  "homepage": "https://github.com/ovo4096/cherry-shrimp#readme",
   "devDependencies": {
     "autoprefixer": "^6.7.7",
     "babel-core": "^6.24.0",
