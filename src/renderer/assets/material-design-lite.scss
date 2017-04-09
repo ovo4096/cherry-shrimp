@@ -17,7 +17,7 @@
 /* Material Design Lite */
 
 // Variables and mixins
-@import "~material-design-lite/src/variables";
+@import "variables";
 @import "~material-design-lite/src/mixins";
 
 // Resets and dependencies
@@ -41,7 +41,7 @@
 @import "~material-design-lite/src/list/list";
 @import "~material-design-lite/src/menu/menu";
 @import "~material-design-lite/src/progress/progress";
-@import "layout/layout";
+@import "~material-design-lite/src/layout/layout";
 @import "~material-design-lite/src/radio/radio";
 @import "~material-design-lite/src/slider/slider";
 @import "~material-design-lite/src/snackbar/snackbar";

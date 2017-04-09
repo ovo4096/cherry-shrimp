@@ -1,8 +1,8 @@
 <template>
-  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+  <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header mdl-layout--fixed-drawer">
     <header class="mdl-layout__header" ref="header">
       <div class="mdl-layout__header-row">
-        <span class="mdl-layout__title">Simple 2</span>
+        <span class="mdl-layout__title">Simple</span>
         <div class="mdl-layout-spacer"></div>
         <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" @click="enterSearch">
           <i class="material-icons">search</i>
@@ -15,8 +15,8 @@
         <input type="text" placeholder="Search" class="mdl-layout__header-search-textfield">
       </div>
     </header>
-    <div class="mdl-layout__drawer drawer">
-      <header class="account-header"></header>
+    <div class="mdl-layout__drawer">
+      <header></header>
       <nav class="mdl-navigation">
         <a class="mdl-navigation__link"
            href="">Link</a>
@@ -32,33 +32,21 @@
       <div class="page-content">
         <!-- Your content goes here -->
         <div class="mdl-grid">
-          <div class="mdl-cell mdl-cell--1-col">1</div>
-          <div class="mdl-cell mdl-cell--1-col">1</div>
-          <div class="mdl-cell mdl-cell--1-col">1</div>
-          <div class="mdl-cell mdl-cell--1-col">1</div>
-          <div class="mdl-cell mdl-cell--1-col">1</div>
-          <div class="mdl-cell mdl-cell--1-col">1</div>
-          <div class="mdl-cell mdl-cell--1-col">1</div>
-          <div class="mdl-cell mdl-cell--1-col">1</div>
-          <div class="mdl-cell mdl-cell--1-col">1</div>
-          <div class="mdl-cell mdl-cell--1-col">1</div>
-          <div class="mdl-cell mdl-cell--1-col">1</div>
-          <div class="mdl-cell mdl-cell--1-col">1</div>
+          <div class="mdl-cell mdl-cell--12-col">
+            <h5>Recommended for You</h5>
+          </div>
         </div>
-        <div class="mdl-grid">
-          <div class="mdl-cell mdl-cell--4-col">4</div>
-          <div class="mdl-cell mdl-cell--4-col">4</div>
-          <div class="mdl-cell mdl-cell--4-col">4</div>
-        </div>
-        <div class="mdl-grid">
-          <div class="mdl-cell mdl-cell--6-col">6</div>
-          <div class="mdl-cell mdl-cell--4-col">4</div>
-          <div class="mdl-cell mdl-cell--2-col">2</div>
-        </div>
-        <div class="mdl-grid">
-          <div class="mdl-cell mdl-cell--6-col mdl-cell--8-col-tablet">6 (8 tablet)</div>
-          <div class="mdl-cell mdl-cell--4-col mdl-cell--6-col-tablet">4 (6 tablet)</div>
-          <div class="mdl-cell mdl-cell--2-col mdl-cell--4-col-phone">2 (4 phone)</div>
+        <div class="mdl-grid" ref="roll" style="position: absolute; width: 5000px;">
+          <iscroll-view :options="{ scrollX: true, scrollY: false, mouseWheel: true }" class="mdl-cell mdl-cell--12-col">
+            <div class="album-card mdl-card mdl-shadow--2dp"></div>
+            <div class="album-card mdl-card mdl-shadow--2dp"></div>
+            <div class="album-card mdl-card mdl-shadow--2dp"></div>
+            <div class="album-card mdl-card mdl-shadow--2dp"></div>
+            <div class="album-card mdl-card mdl-shadow--2dp"></div>
+            <div class="album-card mdl-card mdl-shadow--2dp"></div>
+            <div class="album-card mdl-card mdl-shadow--2dp"></div>
+            <div class="album-card mdl-card mdl-shadow--2dp"></div>
+          </iscroll-view>
         </div>
       </div>
     </main>
@@ -69,7 +57,8 @@
 <script>
 export default {
   name: 'app',
-  mounted () { },
+  mounted () {
+  },
   methods: {
     enterSearch () {
       this.$refs.header.classList.toggle('is-visible-search')
@@ -84,19 +73,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.drawer {
+@import "assets/_variables";
+@import "~material-design-lite/src/_mixins";
+
+.mdl-layout__drawer {
   border: none;
 }
 
-.account-header {
+.mdl-layout__drawer header {
   height: 150px;
-  background: url('./assets/account-header-bg.png');
+  background: $layout-header-bg-color;
 }
-</style>
-
-<style lang="scss" scoped>
-@import "~material-design-lite/src/_variables";
-@import "~material-design-lite/src/_mixins";
 
 .mdl-layout__header.is-visible-search {
   z-index: 5;
@@ -168,5 +155,13 @@ export default {
 
 .mdl-layout__header-search-textfield:focus {
   outline: none;
+}
+
+.album-card.mdl-card {
+  width: 256px;
+  height: 256px;
+  background: $layout-header-bg-color;
+  margin-right: 8px;
+  float: left;
 }
 </style>
