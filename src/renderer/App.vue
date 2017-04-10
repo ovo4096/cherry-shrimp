@@ -36,8 +36,8 @@
             <h5>Recommended for You</h5>
           </div>
         </div>
-        <div class="mdl-grid" ref="roll" style="position: absolute; width: 5000px;">
-          <iscroll-view :options="{ scrollX: true, scrollY: false, mouseWheel: true }" class="mdl-cell mdl-cell--12-col">
+        <div class="mdl-grid roll" ref="recommendRollbar">
+          <div class="mdl-cell mdl-cell--12-col clearfix roll-container">
             <div class="album-card mdl-card mdl-shadow--2dp"></div>
             <div class="album-card mdl-card mdl-shadow--2dp"></div>
             <div class="album-card mdl-card mdl-shadow--2dp"></div>
@@ -46,7 +46,24 @@
             <div class="album-card mdl-card mdl-shadow--2dp"></div>
             <div class="album-card mdl-card mdl-shadow--2dp"></div>
             <div class="album-card mdl-card mdl-shadow--2dp"></div>
-          </iscroll-view>
+          </div>
+        </div>
+        <div class="mdl-grid">
+          <div class="mdl-cell mdl-cell--12-col">
+            <h5>New Albums</h5>
+          </div>
+        </div>
+        <div class="mdl-grid roll" ref="newRollbar">
+          <div class="mdl-cell mdl-cell--12-col clearfix roll-container">
+            <div class="album-card mdl-card mdl-shadow--2dp"></div>
+            <div class="album-card mdl-card mdl-shadow--2dp"></div>
+            <div class="album-card mdl-card mdl-shadow--2dp"></div>
+            <div class="album-card mdl-card mdl-shadow--2dp"></div>
+            <div class="album-card mdl-card mdl-shadow--2dp"></div>
+            <div class="album-card mdl-card mdl-shadow--2dp"></div>
+            <div class="album-card mdl-card mdl-shadow--2dp"></div>
+            <div class="album-card mdl-card mdl-shadow--2dp"></div>
+          </div>
         </div>
       </div>
     </main>
@@ -55,9 +72,14 @@
 </template>
 
 <script>
+import IScroll from 'iscroll'
+
 export default {
   name: 'app',
   mounted () {
+    const albumRollbar = []
+    albumRollbar.push(new IScroll(this.$refs.recommendRollbar, { scrollX: true, scrollY: false, mouseWheel: true }))
+    albumRollbar.push(new IScroll(this.$refs.newRollbar, { scrollX: true, scrollY: false, mouseWheel: true }))
   },
   methods: {
     enterSearch () {
@@ -163,5 +185,23 @@ export default {
   background: $layout-header-bg-color;
   margin-right: 8px;
   float: left;
+}
+
+.album-card.mdl-card:last-of-type {
+  margin-right: 0;
+}
+.roll {
+  position: relative;
+  height: 272px;
+}
+
+.roll-container {
+  top: 8px;
+  left: 8px;
+	position: absolute;
+	z-index: 1;
+	width: 2120px;
+	transform: translateZ(0);
+	user-select: none;
 }
 </style>
