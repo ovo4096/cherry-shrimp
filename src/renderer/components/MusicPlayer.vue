@@ -1,7 +1,12 @@
 <template>
   <div class="music-player">
+    <div class="player-progress">
+      <div class="progress">
+        <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="0" tabindex="0">
+      </div>
+    </div>
     <div class="music">
-      <div class="music-cover"></div>
+      <div class="music-cover"><img src="../assets/logo.png" alt="logo"></div>
       <div class="music-intro">
         <div class="music-info">
           <div class="name">Futurism Love (feat. Miku Hatsune)</div>
@@ -59,6 +64,66 @@ export default {
 }
 </script>
 
+<style lang="scss">
+@import "../assets/_variables";
+
+.player-progress {
+  .progress {
+    > .mdl-slider__container {
+      width: 100%;
+      height: 4px;
+    }
+
+    .mdl-slider__background-flex {
+      margin: 0;
+      width: 100%;
+      height: 4px;
+      top: 1px;
+    }
+
+    .mdl-slider__background-upper {
+      background: transparent;
+    }
+
+    .mdl-slider.is-upgraded.is-lowest-value + .mdl-slider__background-flex > .mdl-slider__background-upper {
+      left: 0;
+    }
+
+    .mdl-slider {
+      &.is-lowest-value::-webkit-slider-thumb {
+        background: $range-color;
+        border: none;
+      }
+
+      &.is-lowest-value::-moz-range-thumb {
+        background: $range-color;
+        border: none;
+      }
+
+      &.is-lowest-value:active::-webkit-slider-thumb {
+        border: none;
+        transform: scale(1.5);
+      }
+
+      &.is-lowest-value:active::-moz-range-thumb {
+        border: none;
+        transform: scale(1.5);
+      }
+    }
+  }
+}
+
+.music-player:hover {
+  .player-progress {
+    .progress {
+      .mdl-slider__background-upper {
+        background: #e6e6e6;
+      }
+    }
+  }
+}
+</style>
+
 <style lang="scss" scoped>
 @import "../assets/_variables";
 @import "~material-design-lite/src/_mixins";
@@ -66,6 +131,39 @@ export default {
 $button-play-fab-font-size: 24px + 26px !default;
 $button-play-icon-size: 32px + 26px !default;
 $button-play-icon-size-mini: 24px + 26px !default;
+
+.player-progress {
+  position: absolute;
+  top: 0;
+  left: 84px;
+  right: -6px;
+  height: 4px;
+  .progress {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    .mdl-slider {
+      margin: 0;
+      width: 100%;
+    }
+
+    .mdl-slider.is-upgraded {
+      height: 4px;
+    }
+  }
+}
+
+// .music-player:hover {
+//   .player-progress {
+//     position: absolute;
+//     top: 0;
+//     left: 90px;
+//     right: 0;
+//     height: 4px;
+//     // background: #e6e6e6;
+//   }
+// }
 
 .audio-volume {
   display: flex;
@@ -162,6 +260,7 @@ $button-play-icon-size-mini: 24px + 26px !default;
 }
 
 .music {
+  margin-top: 4px;
   flex: 1;
   .music-cover {
     width: $music-player-height;
@@ -169,6 +268,13 @@ $button-play-icon-size-mini: 24px + 26px !default;
     background: $layout-header-bg-color;
     margin-right: 8px;
     float: left;
+    position: relative;
+    top: -4px;
+    img {
+      display: block;
+      height: 100%;
+      width: 100%;
+    }
   }
   .music-intro {
     display: flex;
@@ -205,11 +311,13 @@ $button-play-icon-size-mini: 24px + 26px !default;
 
 .player-control {
   margin: 0 48px;
+  margin-top: 4px;
   display: flex;
   align-items: center;
 }
 
 .player-action {
+  margin-top: 4px;
   flex: 1;
   display: flex;
   align-items: center;
