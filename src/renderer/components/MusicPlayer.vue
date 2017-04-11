@@ -32,12 +32,32 @@
       </button>
     </div>
     <div class="player-action">
+      <div class="audio-volume" ref="audioVolume" @mouseleave="hideAudioVolume" @mouseenter="showAudioVolume">
+        <i class="material-icons volume-down">volume_down</i>
+        <div class="audio-volume-slider">
+          <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="0" tabindex="0">
+        </div>
+        <i class="material-icons volume-up">volume_up</i>
+      </div>
       <button class="mdl-button mdl-js-button mdl-button--icon button-queue-music">
         <i class="material-icons">queue_music</i>
       </button>
     </div>
   </div>
 </template>
+
+<script>
+export default {
+  methods: {
+    showAudioVolume () {
+      this.$refs.audioVolume.classList.add('show')
+    },
+    hideAudioVolume () {
+      this.$refs.audioVolume.classList.remove('show')
+    }
+  }
+}
+</script>
 
 <style lang="scss" scoped>
 @import "../assets/_variables";
@@ -46,6 +66,38 @@
 $button-play-fab-font-size: 24px + 26px !default;
 $button-play-icon-size: 32px + 26px !default;
 $button-play-icon-size-mini: 24px + 26px !default;
+
+.audio-volume {
+  display: flex;
+  align-items: center;
+  margin: 0 16px;
+  min-width: 140px;
+  .volume-up, .volume-down {
+    cursor: default;
+  }
+
+  .volume-down {
+    opacity: 0;
+    transition: opacity 0.218s ease-in;
+  }
+
+  .audio-volume-slider {
+    margin: 0 -4px;
+    opacity: 0;
+    transition: opacity 0.218s ease-in;
+  }
+}
+
+.audio-volume.show {
+  .volume-down {
+    opacity: 1;
+  }
+
+  .audio-volume-slider {
+    margin: 0 -4px;
+    opacity: 1;
+  }
+}
 
 .mdl-button--play {
   border-radius: 50%;
