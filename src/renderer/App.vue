@@ -85,15 +85,20 @@
       <section class="mdl-layout__tab-panel" id="scroll-tab-4">
         <div class="page-content"><!-- Your content goes here --></div>
       </section>
+      <div class="music-player-fill"></div>
     </main>
+    <music-player></music-player>
   </div>
 </template>
 
 <script>
 import IScroll from 'iscroll'
+import MusicPlayer from '@/components/MusicPlayer'
 
 export default {
-  name: 'app',
+  components: {
+    MusicPlayer
+  },
   mounted () {
     const albumRollbar = []
     albumRollbar.push(new IScroll(this.$refs.recommendRollbar, { scrollX: true, scrollY: false }))
@@ -160,6 +165,13 @@ export default {
 <style lang="scss" scoped>
 @import "assets/_variables";
 @import "~material-design-lite/src/_mixins";
+
+.music-player-fill {
+  height: $music-player-height;
+  display: block;
+  margin: 0;
+  padding: 0;
+}
 
 .mdl-layout__drawer {
   border: none;
