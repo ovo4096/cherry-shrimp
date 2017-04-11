@@ -7,11 +7,11 @@
           <div class="name">Futurism Love (feat. Miku Hatsune)</div>
           <div class="auth"><a href="#">BAKAEDITZ</a> - <a href="#">Life in the 2k12</a></div>
         </div>
-        <div class="music-action">
+        <!--<div class="music-action">
           <button class="mdl-button mdl-js-button mdl-button--icon">
             <i class="material-icons">favorite</i>
           </button>
-        </div>
+        </div>-->
       </div>
     </div>
     <div class="player-control">
@@ -111,20 +111,20 @@ $button-play-icon-size-mini: 24px + 26px !default;
 
 .music {
   flex: 1;
-  display: flex;
   .music-cover {
     width: $music-player-height;
     height: $music-player-height;
     background: $layout-header-bg-color;
     margin-right: 8px;
+    float: left;
   }
   .music-intro {
-    flex: 1;
     display: flex;
     align-items: center;
     height: 100%;
     .music-info {
       flex: 1;
+      overflow: hidden;
       .name {
         text-overflow: ellipsis;
         overflow: hidden;
