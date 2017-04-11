@@ -2,19 +2,16 @@
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header class="mdl-layout__header is-visible-search" ref="header">
       <div class="mdl-layout__header-row">
-        <!--<span class="mdl-layout__title">Simple</span>-->
         <div class="mdl-layout-spacer"></div>
         <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon" @click="enterSearch">
           <i class="material-icons">search</i>
         </button>
       </div>
       <div class="mdl-layout__tab-bar mdl-js-ripple-effect">
-        <a href="#scroll-tab-1" class="mdl-layout__tab is-active">Tab 1</a>
-        <a href="#scroll-tab-2" class="mdl-layout__tab">Tab 2</a>
-        <a href="#scroll-tab-3" class="mdl-layout__tab">Tab 3</a>
-        <a href="#scroll-tab-4" class="mdl-layout__tab">Tab 4</a>
-        <a href="#scroll-tab-5" class="mdl-layout__tab">Tab 5</a>
-        <a href="#scroll-tab-6" class="mdl-layout__tab">Tab 6</a>
+        <a href="#scroll-tab-1" class="mdl-layout__tab is-active">HOME</a>
+        <a href="#scroll-tab-2" class="mdl-layout__tab">SONGS</a>
+        <a href="#scroll-tab-3" class="mdl-layout__tab">ALBUMS</a>
+        <a href="#scroll-tab-4" class="mdl-layout__tab">FEATURED SETS</a>
       </div>
       <div class="mdl-layout__header-search">
         <div class="mdl-layout__header-search-back" @click="leaveSearch">
@@ -28,7 +25,6 @@
       <div class="mdl-layout__obfuscator" ref="obfuscator" @click="leaveSearch"></div>
     </header>
     <div class="mdl-layout__drawer">
-      <header></header>
       <nav class="mdl-navigation">
         <a class="mdl-navigation__link"
            href="">Link</a>
@@ -44,9 +40,9 @@
       <section class="mdl-layout__tab-panel is-active" id="scroll-tab-1">
         <div class="page-content">
           <!-- Your content goes here -->
-          <div class="mdl-grid">
+          <div class="mdl-grid grid-top">
             <div class="mdl-cell mdl-cell--12-col">
-              <h5>Recommended for You</h5>
+              <h6 class="no-margin">Recommended for You</h6>
             </div>
           </div>
           <div class="mdl-grid roll" ref="recommendRollbar">
@@ -63,7 +59,7 @@
           </div>
           <div class="mdl-grid">
             <div class="mdl-cell mdl-cell--12-col">
-              <h5>New Albums</h5>
+              <h6 class="no-margin">New Albums</h6>
             </div>
           </div>
           <div class="mdl-grid roll" ref="newRollbar">
@@ -89,12 +85,6 @@
       <section class="mdl-layout__tab-panel" id="scroll-tab-4">
         <div class="page-content"><!-- Your content goes here --></div>
       </section>
-      <section class="mdl-layout__tab-panel" id="scroll-tab-5">
-        <div class="page-content"><!-- Your content goes here --></div>
-      </section>
-      <section class="mdl-layout__tab-panel" id="scroll-tab-6">
-        <div class="page-content"><!-- Your content goes here --></div>
-      </section>
     </main>
   </div>
 </template>
@@ -106,8 +96,8 @@ export default {
   name: 'app',
   mounted () {
     const albumRollbar = []
-    albumRollbar.push(new IScroll(this.$refs.recommendRollbar, { scrollX: true, scrollY: false, mouseWheel: true }))
-    albumRollbar.push(new IScroll(this.$refs.newRollbar, { scrollX: true, scrollY: false, mouseWheel: true }))
+    albumRollbar.push(new IScroll(this.$refs.recommendRollbar, { scrollX: true, scrollY: false }))
+    albumRollbar.push(new IScroll(this.$refs.newRollbar, { scrollX: true, scrollY: false }))
   },
   methods: {
     enterSearch () {
@@ -283,8 +273,8 @@ export default {
 }
 
 .album-card.mdl-card {
-  width: 256px;
-  height: 256px;
+  width: $roll-card-height;
+  height: $roll-card-height;
   background: $layout-header-bg-color;
   margin-right: 8px;
   float: left;
@@ -295,7 +285,7 @@ export default {
 }
 .roll {
   position: relative;
-  height: 272px;
+  height: $roll-card-height + 16px;
 }
 
 .roll-container {
@@ -306,5 +296,13 @@ export default {
 	width: 2120px;
 	transform: translateZ(0);
 	user-select: none;
+}
+
+.grid-top {
+  margin-top: 16px;
+}
+
+.no-margin {
+  margin: 0;
 }
 </style>
