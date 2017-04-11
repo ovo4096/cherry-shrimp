@@ -12,11 +12,11 @@
           <div class="name">Futurism Love (feat. Miku Hatsune)</div>
           <div class="auth"><a href="#">BAKAEDITZ</a> - <a href="#">Life in the 2k12</a></div>
         </div>
-        <!--<div class="music-action">
+        <div class="music-action">
           <button class="mdl-button mdl-js-button mdl-button--icon">
             <i class="material-icons">favorite</i>
           </button>
-        </div>-->
+        </div>
       </div>
     </div>
     <div class="player-control">
@@ -26,7 +26,7 @@
       <button class="mdl-button mdl-js-button mdl-button--icon">
         <i class="material-icons">skip_previous</i>
       </button>
-      <button class="mdl-button mdl-js-button mdl-button--play">
+      <button class="mdl-button mdl-js-button mdl-button--play mdl-button--colored">
         <i class="material-icons">play_circle_filled</i>
       </button>
       <button class="mdl-button mdl-js-button mdl-button--icon">
@@ -82,7 +82,7 @@ export default {
     }
 
     .mdl-slider__background-upper {
-      background: transparent;
+      background: #e6e6e6;
     }
 
     .mdl-slider.is-upgraded.is-lowest-value + .mdl-slider__background-flex > .mdl-slider__background-upper {
@@ -108,16 +108,6 @@ export default {
       &.is-lowest-value:active::-moz-range-thumb {
         border: none;
         transform: scale(1.5);
-      }
-    }
-  }
-}
-
-.music-player:hover {
-  .player-progress {
-    .progress {
-      .mdl-slider__background-upper {
-        background: #e6e6e6;
       }
     }
   }
@@ -153,17 +143,6 @@ $button-play-icon-size-mini: 24px + 26px !default;
     }
   }
 }
-
-// .music-player:hover {
-//   .player-progress {
-//     position: absolute;
-//     top: 0;
-//     left: 90px;
-//     right: 0;
-//     height: 4px;
-//     // background: #e6e6e6;
-//   }
-// }
 
 .audio-volume {
   display: flex;
@@ -233,7 +212,6 @@ $button-play-icon-size-mini: 24px + 26px !default;
 
   & .mdl-button__ripple-container {
     border-radius: 50%;
-    // Fixes clipping bug in Safari.
     -webkit-mask-image: -webkit-radial-gradient(circle, white, black);
   }
 }
