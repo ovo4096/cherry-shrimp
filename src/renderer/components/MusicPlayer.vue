@@ -1,6 +1,7 @@
 <template>
   <div>
-    <div class="playlist" ref="playlist">
+    <div class="playlist"
+         ref="playlist">
       <div class="container-wrapper">
         <div class="container">
           <table class="mdl-data-table mdl-js-data-table">
@@ -55,11 +56,17 @@
     <div class="music-player">
       <div class="player-progress">
         <div class="progress">
-          <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="0" tabindex="0">
+          <input class="mdl-slider mdl-js-slider"
+                 type="range"
+                 min="0"
+                 max="100"
+                 value="0"
+                 tabindex="0">
         </div>
       </div>
       <div class="music">
-        <div class="music-cover"><img src="../assets/logo.png" alt="logo"></div>
+        <div class="music-cover"><img src="../assets/logo.png"
+               alt="logo"></div>
         <div class="music-intro">
           <div class="music-info">
             <div class="name">Futurism Love (feat. Miku Hatsune)</div>
@@ -90,14 +97,24 @@
         </button>
       </div>
       <div class="player-action">
-        <div class="audio-volume" ref="audioVolume" @mouseleave="hideAudioVolume" @mouseenter="showAudioVolume">
+        <div class="audio-volume"
+             ref="audioVolume"
+             @mouseleave="hideAudioVolume"
+             @mouseenter="showAudioVolume">
           <i class="material-icons volume-down">volume_down</i>
           <div class="audio-volume-slider">
-            <input class="mdl-slider mdl-js-slider" type="range" min="0" max="100" value="0" tabindex="0">
+            <input class="mdl-slider mdl-js-slider"
+                   type="range"
+                   min="0"
+                   max="100"
+                   value="0"
+                   tabindex="0">
           </div>
           <i class="material-icons volume-up">volume_up</i>
         </div>
-        <button class="mdl-button mdl-js-button mdl-button--icon button-queue-music" ref="togglePlaylistButton" @click="togglePlaylist">
+        <button class="mdl-button mdl-js-button mdl-button--icon button-queue-music"
+                ref="togglePlaylistButton"
+                @click="togglePlaylist">
           <i class="material-icons">queue_music</i>
         </button>
       </div>
@@ -126,7 +143,7 @@ export default {
 @import "../assets/_variables";
 .player-progress {
   .progress {
-    > .mdl-slider__container {
+    >.mdl-slider__container {
       width: 100%;
       height: 4px;
     }
@@ -142,7 +159,7 @@ export default {
       background: none;
     }
 
-    .mdl-slider.is-upgraded.is-lowest-value + .mdl-slider__background-flex > .mdl-slider__background-upper {
+    .mdl-slider.is-upgraded.is-lowest-value+.mdl-slider__background-flex>.mdl-slider__background-upper {
       left: 0;
     }
 
@@ -181,9 +198,9 @@ export default {
 @import "../assets/_variables";
 @import "~material-design-lite/src/_mixins";
 
-$button-play-fab-font-size: 24px + 26px + 17px !default;
-$button-play-icon-size: 32px + 26px + 17px !default;
-$button-play-icon-size-mini: 24px + 26px + 17px !default;
+$button-play-fab-font-size: 24px+26px+17px !default;
+$button-play-icon-size: 32px+26px+17px !default;
+$button-play-icon-size-mini: 24px+26px+17px !default;
 
 .playlist {
   position: fixed;
@@ -194,7 +211,7 @@ $button-play-icon-size-mini: 24px + 26px + 17px !default;
   background: #fff;
 
   max-width: 732px;
-  border-radius:2px;
+  border-radius: 2px;
   z-index: 2;
   transform-origin: right bottom 0px;
   transform: scale(0);
@@ -224,7 +241,9 @@ $button-play-icon-size-mini: 24px + 26px + 17px !default;
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
-      a, a:hover, a:focus {
+      a,
+      a:hover,
+      a:focus {
         color: #616161;
         text-decoration: none;
       }
@@ -297,7 +316,8 @@ $button-play-icon-size-mini: 24px + 26px + 17px !default;
   align-items: center;
   margin: 0 16px;
   min-width: 140px;
-  .volume-up, .volume-down {
+  .volume-up,
+  .volume-down {
     cursor: default;
   }
 
@@ -372,7 +392,7 @@ $button-play-icon-size-mini: 24px + 26px + 17px !default;
   height: $music-player-height;
   z-index: 2;
   background: #fff;
-  box-shadow: 0 0 8px rgba(0,0,0,.4);
+  box-shadow: 0 0 8px rgba(0, 0, 0, .4);
 
   display: flex;
 
@@ -422,7 +442,9 @@ $button-play-icon-size-mini: 24px + 26px + 17px !default;
         margin-top: 4px;
         font-size: 13px;
         white-space: nowrap;
-        a, a:hover, a:focus {
+        a,
+        a:hover,
+        a:focus {
           color: #616161;
           text-decoration: none;
         }

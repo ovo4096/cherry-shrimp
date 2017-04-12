@@ -85,7 +85,6 @@
       <section class="mdl-layout__tab-panel" id="scroll-tab-4">
         <div class="page-content"><!-- Your content goes here --></div>
       </section>
-      <div class="music-player-fill"></div>
     </main>
     <music-player></music-player>
   </div>
@@ -166,13 +165,6 @@ export default {
 @import "assets/_variables";
 @import "~material-design-lite/src/_mixins";
 
-.music-player-fill {
-  height: $music-player-height;
-  display: block;
-  margin: 0;
-  padding: 0;
-}
-
 .mdl-layout__drawer {
   border: none;
 }
@@ -189,6 +181,17 @@ export default {
     top: 0;
     left: 0;
     right: 0;
+  }
+}
+
+.mdl-layout__content {
+  bottom: $music-player-height;
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 112px;
+  @media screen and (max-width: $layout-screen-size-threshold) {
+    top: 104px;
   }
 }
 
@@ -311,7 +314,7 @@ export default {
 }
 
 .grid-top {
-  margin-top: 16px;
+  padding-top: 24px;
 }
 
 .no-margin {
