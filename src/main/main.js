@@ -1,4 +1,5 @@
 const { app, BrowserWindow } = require('electron')
+
 const url = require('url')
 const config = require('../../config/main')
 const rendererConfig = require('../../config/renderer')
