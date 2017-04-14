@@ -2,6 +2,10 @@ const path = require('path')
 const config = require('../../config/renderer')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 
+function resolve (dir) {
+  return path.join(__dirname, '../..', dir)
+}
+
 exports.assetsPath = function (_path) {
   const assetsSubDirectory = process.env.NODE_ENV === 'production'
     ? config.build.assetsSubDirectory
@@ -16,7 +20,10 @@ exports.cssLoaders = function (options) {
     loader: 'css-loader',
     options: {
       minimize: process.env.NODE_ENV === 'production',
-      sourceMap: options.sourceMap
+      sourceMap: options.sourceMap,
+      alias: {
+        '@': resolve('src/renderer')
+      }
     }
   }
 

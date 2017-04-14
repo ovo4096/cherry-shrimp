@@ -140,7 +140,8 @@ export default {
 </script>
 
 <style lang="scss">
-@import "../assets/_variables";
+@import "~@/assets/variables";
+
 .player-progress {
   .progress {
     >.mdl-slider__container {
