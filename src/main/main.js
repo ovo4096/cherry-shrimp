@@ -1,5 +1,7 @@
 const { app, BrowserWindow } = require('electron')
 
+app.commandLine.appendSwitch('enable-overlay-scrollbar')
+
 const url = require('url')
 const config = require('../../config/main')
 const rendererConfig = require('../../config/renderer')

@@ -2,9 +2,9 @@
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
     <header-bar></header-bar>
     <drawer-navigation></drawer-navigation>
-    <main class="mdl-layout__content">
-      <page-content></page-content>
-    </main>
+    <page-content>
+      <router-view></router-view>
+    </page-content>
     <music-player></music-player>
   </div>
 </template>
@@ -24,18 +24,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss" scoped>
-@import "~@/assets/variables";
-
-.mdl-layout__content {
-  bottom: $music-player-height;
-  position: absolute;
-  left: 0;
-  right: 0;
-  top: $layout-desktop-header-height;
-  @media screen and (max-width: $layout-screen-size-threshold) {
-    top: $layout-mobile-header-height;
-  }
-}
-</style>
