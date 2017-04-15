@@ -161,7 +161,7 @@ export default {
 
 .iscroll-wrapper {
   position: relative;
-  width: 3000px;
+  width: ($music-set-card-width + 16px) * 10 - 16px;
 }
 
 .page-content {
@@ -173,10 +173,9 @@ export default {
 }
 
 .mdl-card {
-  min-width: 256px;
-  min-height: 256px;
-  max-width: 256px;
-  max-height: 256px;
+  flex: 0 0 auto;
+  width: $music-set-card-width;
+  height: $music-set-card-height;
   margin-right: 16px;
 }
 

@@ -1,5 +1,7 @@
 
-$roll-card-height: 256px !default;
+$music-set-card-height: 256px !default;
+$music-set-card-width: $music-set-card-height !default;
+
 $music-player-height: 90px !default;
 
 @import "~material-design-lite/src/variables";
