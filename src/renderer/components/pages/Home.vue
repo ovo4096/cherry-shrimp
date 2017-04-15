@@ -9,7 +9,7 @@
       <div class="mdl-grid">
         <div class="mdl-cell mdl-cell--12-col" ref="scrollbars">
           <div class="mdl-card-group iscroll-wrapper">
-            <div v-for="i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" class="music-set-card">
+            <div v-for="i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" class="music-set-card mdl-shadow--2dp">
               <div class="mdl-card">
                 <div class="mdl-card__title mdl-card--expand">
                   <h2 class="mdl-card__title-text">
