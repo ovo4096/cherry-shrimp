@@ -1,6 +1,6 @@
 <template>
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-    <header-bar></header-bar>
+    <header-search-bar></header-search-bar>
     <drawer-navigation></drawer-navigation>
     <page-content>
       <router-view></router-view>
@@ -13,14 +13,14 @@
 import MusicPlayer from '@/components/MusicPlayer'
 import DrawerNavigation from '@/components/DrawerNavigation'
 import PageContent from '@/components/PageContent'
-import HeaderBar from '@/components/HeaderBar'
+import HeaderSearchBar from '@/components/HeaderSearchBar'
 
 export default {
   components: {
     MusicPlayer,
     DrawerNavigation,
     PageContent,
-    HeaderBar
+    HeaderSearchBar
   }
 }
 </script>
