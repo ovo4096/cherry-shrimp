@@ -22,12 +22,12 @@ export default {
   methods: {
     startSearch () {
       this.isSearching = true
-      this.$refs.obfuscator.classList.toggle('is-visible')
+      this.$refs.obfuscator.classList.add('is-visible')
     },
     exitSearch () {
       this.isSearching = false
       this.$refs.searchInput.value = ''
-      this.$refs.obfuscator.classList.toggle('is-visible')
+      this.$refs.obfuscator.classList.remove('is-visible')
     },
     clearSearchInput () {
       this.$refs.searchInput.value = ''
