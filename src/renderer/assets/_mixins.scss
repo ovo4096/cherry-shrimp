@@ -1,7 +1,7 @@
 @import "~material-design-lite/src/mixins";
 @import "~material-design-lite/src/layout/layout";
 
-@mixin header-search-left-button () {
+@mixin header-search-left-button() {
   @extend .mdl-layout__drawer-button;
   border-radius: 2px 0 0 2px;
   background: #fff;
@@ -18,7 +18,7 @@
   }
 }
 
-@mixin header-search-right-button () {
+@mixin header-search-right-button() {
   @extend .mdl-layout__drawer-button;
   border-radius: 0 2px 2px 0;
   background: #fff;
@@ -34,4 +34,10 @@
   &:focus {
     outline: none;
   }
+}
+
+@mixin typo-hidden-overflow() {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }

@@ -387,11 +387,11 @@ $button-play-icon-size-mini: 24px+26px+17px !default;
 
 .music-player {
   position: fixed;
-  bottom: 0;
+  top: 0;
   left: 0;
   right: 0;
   height: $music-player-height;
-  z-index: 2;
+  z-index: 3;
   background: #fff;
   box-shadow: 0 0 8px rgba(0, 0, 0, .4);
 
