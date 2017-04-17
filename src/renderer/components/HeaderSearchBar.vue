@@ -1,5 +1,5 @@
 <template>
-  <header class="mdl-layout__header has-header-search" ref="header">
+  <header class="mdl-layout__header mdl-layout__header--transparent has-header-search" ref="header">
     <div class="layout__header-search">
       <input type="text"
              placeholder="Search Music Library"
@@ -84,6 +84,7 @@ export default {
       border-radius: 2px;
       box-sizing: border-box;
       @include typo-title();
+      @include shadow-2dp();
       font-weight: 400;
       position: relative;
       z-index: 3;
