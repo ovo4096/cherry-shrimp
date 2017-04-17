@@ -1,0 +1,37 @@
+@import "~material-design-lite/src/mixins";
+@import "~material-design-lite/src/layout/layout";
+
+@mixin header-search-left-button () {
+  @extend .mdl-layout__drawer-button;
+  border-radius: 2px 0 0 2px;
+  background: #fff;
+  color: #757575;
+  left: $layout-header-search-padding;
+  margin: 8px 8px 8px 0;
+
+  @media screen and (max-width: $layout-screen-size-threshold) {
+    margin: 4px 8px 4px 0;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
+
+@mixin header-search-right-button () {
+  @extend .mdl-layout__drawer-button;
+  border-radius: 0 2px 2px 0;
+  background: #fff;
+  color: #757575;
+  left: auto;
+  right: $layout-header-search-padding;
+  margin: 8px 0 8px 8px;
+
+  @media screen and (max-width: $layout-screen-size-threshold) {
+    margin: 4px 0 4px 8px;
+  }
+
+  &:focus {
+    outline: none;
+  }
+}
