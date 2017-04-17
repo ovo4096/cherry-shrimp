@@ -6,7 +6,6 @@
       <router-view></router-view>
     </page-content>
     <music-player></music-player>
-    <new-music-player></new-music-player>
   </div>
 </template>
 
@@ -15,15 +14,13 @@ import MusicPlayer from '@/components/MusicPlayer'
 import DrawerNavigation from '@/components/DrawerNavigation'
 import PageContent from '@/components/PageContent'
 import HeaderSearchBar from '@/components/HeaderSearchBar'
-import NewMusicPlayer from '@/components/NewMusicPlayer'
 
 export default {
   components: {
     MusicPlayer,
     DrawerNavigation,
     PageContent,
-    HeaderSearchBar,
-    NewMusicPlayer
+    HeaderSearchBar
   }
 }
 </script>

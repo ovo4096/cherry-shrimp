@@ -1,5 +1,5 @@
 <template>
-  <header class="mdl-layout__header has-header-search">
+  <header class="mdl-layout__header has-header-search" ref="header">
     <div class="layout__header-search">
       <input type="text"
              placeholder="Search Music Library"
@@ -31,11 +31,13 @@ export default {
     startSearch () {
       this.isSearching = true
       this.$refs.obfuscator.classList.add('is-visible')
+      this.$refs.header.style.zIndex = 4
     },
     exitSearch () {
       this.isSearching = false
       this.$refs.searchInput.value = ''
       this.$refs.obfuscator.classList.remove('is-visible')
+      this.$refs.header.style.zIndex = 3
     },
     clearSearchInput () {
       this.$refs.searchInput.value = ''
