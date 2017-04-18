@@ -30,44 +30,106 @@
       <div class="music-player__volume">
         <i class="material-icons music-player__volume-button">volume_down</i>
         <input class="mdl-slider mdl-js-slider"
-              type="range"
-              min="0"
-              max="100"
-              value="0"
-              tabindex="0">
+               type="range"
+               min="0"
+               max="100"
+               value="0"
+               tabindex="0">
         <i class="material-icons music-player__volume-button">volume_up</i>
       </div>
       <label class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect">
-        <input type="checkbox" class="mdl-icon-toggle__input">
+        <input type="checkbox"
+               class="mdl-icon-toggle__input">
         <i class="mdl-icon-toggle__label material-icons">queue_music</i>
       </label>
+      <div class="music-player__time-label">0:01 / 3:54</div>
+    </div>
+    <div class="music-player__progress">
+      <input class="mdl-slider mdl-js-slider"
+             type="range"
+             min="0"
+             max="100"
+             value="0"
+             tabindex="0">
     </div>
   </div>
 </template>
 
 <style lang="scss">
-.music-player {
-  .mdl-slider__container {
-    .mdl-slider {
-      margin: 0;
-      width: 100%;
-      min-width: 50px;
-    }
-    .mdl-slider__background-flex {
-      margin: 0 6px;
-      width: calc(100% - 12px)
-    }
-  }
+@import "~@/assets/variables";
+@import "~@/assets/mixins";
 
+.music-player {
   .music-player__action .music-player__volume {
-    > *:nth-child(-n+2) {
+
+    .mdl-slider__container {
+      .mdl-slider {
+        margin: 0;
+        width: 100%;
+        min-width: 50px;
+      }
+      .mdl-slider__background-flex {
+        margin: 0 6px;
+        width: calc(100% - 12px)
+      }
+    }
+
+    >*:nth-child(-n+2) {
       transition: opacity 0.218s ease-in-out;
       opacity: 0;
     }
 
-    &:hover > *:nth-child(-n+2) {
+    &:hover>*:nth-child(-n+2) {
       opacity: 1;
     }
+  }
+
+  .music-player__progress {
+    .mdl-slider__container {
+      height: 100%;
+      .mdl-slider {
+        height: 100%;
+        width: 100%;
+        margin: 0;
+        &.is-lowest-value::-webkit-slider-thumb {
+          -webkit-appearance: none;
+          width: 12px;
+          height: 12px;
+          box-sizing: border-box;
+          border-radius: 50%;
+          background: $range-color;
+          border: none;
+          transition: transform 0.18s $animation-curve-default,
+          border 0.18s $animation-curve-default,
+          box-shadow 0.18s $animation-curve-default,
+          background 0.28s $animation-curve-default;
+        }
+
+        &.is-lowest-value:focus:not(:active)::-webkit-slider-thumb {
+          box-shadow: 0 0 0 10px $range-faded-color;
+        }
+
+        &.is-lowest-value:active::-webkit-slider-thumb {
+          background-image: none;
+          background: $range-color;
+          transform: scale(1.5);
+        }
+      }
+      .mdl-slider__background-flex {
+        height: 100%;
+        width: calc(100% - 12px);
+        transform: none;
+        top: 0;
+        margin: 0 6px;
+        .mdl-slider__background-upper {
+          background-color: transparent;
+        }
+      }
+    }
+  }
+
+  &:hover .music-player__progress .mdl-slider__container .mdl-slider__background-flex .mdl-slider__background-upper {
+    background-color: #e6e6e6;
   }
 }
 </style>
@@ -139,11 +201,15 @@ $button-icon-offset: 8px;
     flex: 1;
     display: flex;
     min-width: $music-player-height;
+    height: $music-player-height - 4px;
+    margin-top: 4px;
 
     .music-player__music-cover {
       height: $music-player-height;
       width: $music-player-height;
-      margin-right: 8px;
+      margin-right: 16px;
+      position: relative;
+      top: -4px;
     }
 
     .music-player__music-intro {
@@ -169,6 +235,8 @@ $button-icon-offset: 8px;
     display: flex;
     align-items: center;
     margin: 0 16px;
+    height: $music-player-height - 4px;
+    margin-top: 4px;
   }
 
   .music-player__action {
@@ -177,7 +245,8 @@ $button-icon-offset: 8px;
     align-items: center;
     justify-content: flex-end;
     margin-right: 16px;
-
+    height: $music-player-height - 4px;
+    margin-top: 4px;
     .music-player__volume {
       display: flex;
       align-items: center;
@@ -189,6 +258,31 @@ $button-icon-offset: 8px;
         text-align: center;
         cursor: default;
       }
+    }
+    .music-player__time-label {
+      position: absolute;
+      top: 15px;
+      right: 16px;
+      font-size: 12px;
+      line-height: 12px;
+      margin: 0 5px;
+      color: #757575;
+      opacity: 0;
+      transition: opacity .218s ease;
+    }
+  }
+
+  .music-player__progress {
+    position: absolute;
+    top: 0;
+    left: 84px;
+    right: -6px;
+    height: 4px;
+  }
+
+  &:hover {
+    .music-player__action .music-player__time-label {
+      opacity: 1;
     }
   }
 }

@@ -70,7 +70,7 @@ export default {
 
 .music-set-card {
   margin-right: 16px;
-  border: 2px;
+  border-radius: 2px;
 
   background: url('~@/assets/album1.jpg');
   background-size: cover;
