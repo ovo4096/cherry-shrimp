@@ -75,7 +75,7 @@
     }
 
     >*:nth-child(-n+2) {
-      transition: opacity 0.218s ease-in-out;
+      transition: opacity 0.218s ease-in;
       opacity: 0;
     }
 
@@ -259,6 +259,7 @@ $button-icon-offset: 8px;
         cursor: default;
       }
     }
+    
     .music-player__time-label {
       position: absolute;
       top: 15px;
