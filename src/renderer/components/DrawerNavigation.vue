@@ -3,8 +3,7 @@
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link"
          href="">Home</a>
-      <a class="mdl-navigation__link"
-         href="">Music library</a>
+      <router-link class="mdl-navigation__link" :to="{ name: 'MusicLibrary'}">Music Library</router-link>
     </nav>
     <nav class="mdl-navigation">
       <a class="mdl-navigation__link"
