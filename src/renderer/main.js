@@ -4,7 +4,6 @@ import MaterialLayout from '@/components/MaterialLayout'
 import router from './router'
 import 'material-design-icons/iconfont/material-icons.css'
 import '@/assets/material-design-lite.scss'
-import 'material-design-lite/material'
 
 Vue.config.productionTip = false
 
