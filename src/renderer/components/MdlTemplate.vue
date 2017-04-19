@@ -1,7 +1,5 @@
 <template>
-  <div>
-    <slot></slot>
-  </div>
+  <div class="mdl-template"><slot></slot></div>
 </template>
 
 <script>

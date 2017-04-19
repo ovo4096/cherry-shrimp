@@ -1,55 +1,55 @@
 <template>
-  <material-design-lite-template>
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-      <header-search-bar></header-search-bar>
-      <drawer-navigation></drawer-navigation>
-      <main class="mdl-layout__content">
-        <div class="page-content">
-          <template v-for="group in groups">
-            <div class="mdl-grid">
-              <div class="mdl-cell mdl-cell--12-col">
-                <div class="mdl-typography--title">{{ group.name }}</div>
-              </div>
+  <layout>
+    <header-search-bar slot="header"></header-search-bar>
+    <drawer-navigation slot="drawer"></drawer-navigation>
+    <main slot="content" class="mdl-layout__content">
+      <div class="page-content">
+        <template v-for="group in groups">
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--12-col">
+              <div class="mdl-typography--title">{{ group.name }}</div>
             </div>
-            <div class="mdl-grid">
-              <div class="mdl-cell mdl-cell--12-col"
-                   ref="scrollbars">
-                <div class="mdl-card-group iscroll-wrapper">
-                  <div v-for="i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
-                       class="music-set-card mdl-shadow--2dp">
-                    <div class="mdl-card">
-                      <div class="mdl-card__title mdl-card--expand">
-                        <h2 class="mdl-card__title-text">
-                          Today's Best Music
-                        </h2>
-                      </div>
-                      <div class="mdl-card__title">
-                        <div class="mdl-card__subtitle-text">Lorem ipsum dolor sit amet</div>
-                      </div>
-                      <div class="mdl-card__play">
+          </div>
+          <div class="mdl-grid">
+            <div class="mdl-cell mdl-cell--12-col" ref="scrollbars">
+              <div class="mdl-card-group iscroll-wrapper">
+                <div v-for="i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" class="music-set-card mdl-shadow--2dp">
+                  <div class="mdl-card">
+                    <div class="mdl-card__title mdl-card--expand">
+                      <h2 class="mdl-card__title-text">
+                            Today's Best Music
+                          </h2>
+                    </div>
+                    <div class="mdl-card__title">
+                      <div class="mdl-card__subtitle-text">Lorem ipsum dolor sit amet</div>
+                    </div>
+                    <div class="mdl-card__play">
+                      <mdl-template>
                         <button class="mdl-button mdl-button--fab mdl-button--primary mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i class="material-icons">play_arrow</i></button>
-                      </div>
+                      </mdl-template>
                     </div>
                   </div>
                 </div>
               </div>
             </div>
-          </template>
-        </div>
-      </main>
-    </div>
-  </material-design-lite-template>
+          </div>
+        </template>
+      </div>
+    </main>
+  </layout>
 </template>
 
 <script>
 import IScroll from 'iscroll'
-import MaterialDesignLiteTemplate from '@/components/MaterialDesignLiteTemplate'
+import MdlTemplate from '@/components/MdlTemplate'
+import Layout from '@/components/Layout'
 import HeaderSearchBar from '@/components/HeaderSearchBar'
 import DrawerNavigation from '@/components/DrawerNavigation'
 
 export default {
   components: {
-    MaterialDesignLiteTemplate,
+    MdlTemplate,
+    Layout,
     HeaderSearchBar,
     DrawerNavigation
   },
@@ -72,10 +72,6 @@ export default {
 <style lang="scss" scoped>
 @import "~@/assets/variables";
 @import "~material-design-lite/src/mixins";
-
-.mdl-layout__content {
-  margin-bottom: $music-player-height;
-}
 
 .iscroll-wrapper {
   position: relative;

@@ -10,50 +10,76 @@
       </div>
     </div>
     <div class="music-player__control">
-      <button class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">repeat</i>
-      </button>
-      <button class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">skip_previous</i>
-      </button>
-      <button class="mdl-button mdl-js-button mdl-button--icon-big mdl-button--colored">
-        <i class="material-icons">play_circle_filled</i>
-      </button>
-      <button class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">skip_next</i>
-      </button>
-      <button class="mdl-button mdl-js-button mdl-button--icon">
-        <i class="material-icons">shuffle</i>
-      </button>
+      <mdl-template>
+        <button class="mdl-button mdl-js-button mdl-button--icon">
+          <i class="material-icons">repeat</i>
+        </button>
+      </mdl-template>
+      <mdl-template>
+        <button class="mdl-button mdl-js-button mdl-button--icon">
+          <i class="material-icons">skip_previous</i>
+        </button>
+      </mdl-template>
+      <mdl-template>
+        <button class="mdl-button mdl-js-button mdl-button--icon-big mdl-button--colored">
+          <i class="material-icons">play_circle_filled</i>
+        </button>
+      </mdl-template>
+      <mdl-template>
+        <button class="mdl-button mdl-js-button mdl-button--icon">
+          <i class="material-icons">skip_next</i>
+        </button>
+      </mdl-template>
+      <mdl-template>
+        <button class="mdl-button mdl-js-button mdl-button--icon">
+          <i class="material-icons">shuffle</i>
+        </button>
+      </mdl-template>
     </div>
     <div class="music-player__action">
       <div class="music-player__volume">
         <i class="material-icons music-player__volume-button">volume_down</i>
+        <mdl-template>
+          <input class="mdl-slider mdl-js-slider"
+                 type="range"
+                 min="0"
+                 max="100"
+                 value="0"
+                 tabindex="0">
+        </mdl-template>
+        <i class="material-icons music-player__volume-button">volume_up</i>
+      </div>
+      <mdl-template>
+        <label class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect">
+          <input type="checkbox"
+                 class="mdl-icon-toggle__input">
+          <i class="mdl-icon-toggle__label material-icons">queue_music</i>
+        </label>
+      </mdl-template>
+      <div class="music-player__time-label">0:01 / 3:54</div>
+    </div>
+    <div class="music-player__progress">
+      <mdl-template>
         <input class="mdl-slider mdl-js-slider"
                type="range"
                min="0"
                max="100"
                value="0"
                tabindex="0">
-        <i class="material-icons music-player__volume-button">volume_up</i>
-      </div>
-      <label class="mdl-icon-toggle mdl-js-icon-toggle mdl-js-ripple-effect">
-        <input type="checkbox"
-               class="mdl-icon-toggle__input">
-        <i class="mdl-icon-toggle__label material-icons">queue_music</i>
-      </label>
-      <div class="music-player__time-label">0:01 / 3:54</div>
-    </div>
-    <div class="music-player__progress">
-      <input class="mdl-slider mdl-js-slider"
-             type="range"
-             min="0"
-             max="100"
-             value="0"
-             tabindex="0">
+      </mdl-template>
     </div>
   </div>
 </template>
+
+<script>
+import MdlTemplate from '@/components/MdlTemplate'
+
+export default {
+  components: {
+    MdlTemplate
+  }
+}
+</script>
 
 <style lang="scss">
 @import "~@/assets/variables";
@@ -151,7 +177,6 @@ $button-icon-offset: 8px;
   width: $button-icon-size * $button-icon-scale;
   padding: 0;
   overflow: hidden;
-  color: inherit;
   line-height: normal;
 
   & .material-icons {
@@ -259,7 +284,7 @@ $button-icon-offset: 8px;
         cursor: default;
       }
     }
-    
+
     .music-player__time-label {
       position: absolute;
       top: 15px;
@@ -279,6 +304,10 @@ $button-icon-offset: 8px;
     left: 84px;
     right: -6px;
     height: 4px;
+    .mdl-template {
+      height: 100%;
+      width: 100%;
+    }
   }
 
   &:hover {
