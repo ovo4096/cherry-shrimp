@@ -1,7 +1,5 @@
 <template>
-  <main class="mdl-layout__content">
-    <slot></slot>
-  </main>
+  <router-view></router-view>
 </template>
 
 <style lang="scss" scoped>

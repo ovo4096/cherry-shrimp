@@ -1,34 +1,38 @@
 <template>
-  <div class="page-content">
-    <template v-for="group in groups">
-      <div class="mdl-grid">
-        <div class="mdl-cell mdl-cell--12-col">
-          <div class="mdl-typography--title">{{ group.name }}</div>
+  <main class="mdl-layout__content">
+    <div class="page-content">
+      <template v-for="group in groups">
+        <div class="mdl-grid">
+          <div class="mdl-cell mdl-cell--12-col">
+            <div class="mdl-typography--title">{{ group.name }}</div>
+          </div>
         </div>
-      </div>
-      <div class="mdl-grid">
-        <div class="mdl-cell mdl-cell--12-col" ref="scrollbars">
-          <div class="mdl-card-group iscroll-wrapper">
-            <div v-for="i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" class="music-set-card mdl-shadow--2dp">
-              <div class="mdl-card">
-                <div class="mdl-card__title mdl-card--expand">
-                  <h2 class="mdl-card__title-text">
-                    Today's Best Music
-                  </h2>
-                </div>
-                <div class="mdl-card__title">
-                  <div class="mdl-card__subtitle-text">Lorem ipsum dolor sit amet</div>
-                </div>
-                <div class="mdl-card__play">
-                  <button class="mdl-button mdl-button--fab mdl-button--primary mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i class="material-icons">play_arrow</i></button>
+        <div class="mdl-grid">
+          <div class="mdl-cell mdl-cell--12-col"
+               ref="scrollbars">
+            <div class="mdl-card-group iscroll-wrapper">
+              <div v-for="i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]"
+                   class="music-set-card mdl-shadow--2dp">
+                <div class="mdl-card">
+                  <div class="mdl-card__title mdl-card--expand">
+                    <h2 class="mdl-card__title-text">
+                      Today's Best Music
+                    </h2>
+                  </div>
+                  <div class="mdl-card__title">
+                    <div class="mdl-card__subtitle-text">Lorem ipsum dolor sit amet</div>
+                  </div>
+                  <div class="mdl-card__play">
+                    <button class="mdl-button mdl-button--fab mdl-button--primary mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i class="material-icons">play_arrow</i></button>
+                  </div>
                 </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </template>
-  </div>
+      </template>
+    </div>
+  </main>
 </template>
 
 <script>
@@ -119,5 +123,4 @@ export default {
     margin-right: 0;
   }
 }
-
 </style>
