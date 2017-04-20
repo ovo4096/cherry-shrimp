@@ -11,6 +11,7 @@
               <th class="mdl-data-table__cell--non-numeric">ALBUM</th>
               <th class="min-cell"></th>
               <th class="min-cell"></th>
+              <th class="min-cell"></th>
             </tr>
           </thead>
           <tbody>
@@ -25,6 +26,13 @@
                     <input type="checkbox" class="mdl-icon-toggle__input" checked>
                     <i class="mdl-icon-toggle__label material-icons">favorite</i>
                   </label>
+                </mdl-template>
+              </td>
+              <td>
+                <mdl-template>
+                  <button class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">play_arrow</i>
+                  </button>
                 </mdl-template>
               </td>
               <td>
