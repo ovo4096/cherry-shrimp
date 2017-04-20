@@ -1,6 +1,6 @@
 <template>
   <layout>
-    <header-search-bar slot="header"></header-search-bar>
+    <home-header slot="header"></home-header>
     <drawer-navigation slot="drawer"></drawer-navigation>
     <main slot="content" class="mdl-layout__content">
       <div class="page-content">
@@ -45,14 +45,14 @@
 import IScroll from 'iscroll'
 import MdlTemplate from '@/components/MdlTemplate'
 import Layout from '@/components/Layout'
-import HeaderSearchBar from '@/components/HeaderSearchBar'
+import HomeHeader from '@/components/HomeHeader'
 import DrawerNavigation from '@/components/DrawerNavigation'
 
 export default {
   components: {
     MdlTemplate,
     Layout,
-    HeaderSearchBar,
+    HomeHeader,
     DrawerNavigation
   },
   data: () => ({
@@ -119,7 +119,7 @@ export default {
   transition: box-shadow 0.28s cubic-bezier(0.4, 0, 0.2, 1);
 
   &:hover {
-    @include focus-shadow();
+    @include shadow-4dp();
 
     .mdl-card__play {
       visibility: visible;
