@@ -81,18 +81,17 @@ export default {
 
 .mdl-layout__content {
   top: - $layout-desktop-header-height;
-  margin-bottom: - $layout-desktop-header-height;
+  margin-bottom: $music-player-height - $layout-desktop-header-height;
   background-color: $global-bg-color;
   @media screen and (max-width: $layout-screen-size-threshold) {
     top: - $layout-mobile-header-height;
-    margin-bottom: - $layout-mobile-header-height;
+    margin-bottom: $music-player-height - $layout-mobile-header-height;
   }
 
   .page-content {
-    padding-top: $layout-desktop-header-height + $layout-tab-bar-height;
-    padding-bottom: $music-player-height;
+    padding-top: $layout-desktop-header-height;
     @media screen and (max-width: $layout-screen-size-threshold) {
-      padding-top: $layout-mobile-header-height + $layout-tab-bar-height;
+      padding-top: $layout-mobile-header-height;
     }
   }
 }
