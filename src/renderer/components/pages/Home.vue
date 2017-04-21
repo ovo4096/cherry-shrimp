@@ -17,9 +17,7 @@
                   <div v-for="i in [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]" class="music-set-card mdl-shadow--2dp">
                     <div class="mdl-card">
                       <div class="mdl-card__title mdl-card--expand">
-                        <h2 class="mdl-card__title-text">
-                              Today's Best Music
-                            </h2>
+                        <h2 class="mdl-card__title-text">Today's Best Music</h2>
                       </div>
                       <div class="mdl-card__title">
                         <div class="mdl-card__subtitle-text">Lorem ipsum dolor sit amet</div>
@@ -78,23 +76,24 @@ export default {
 .playlist-group {
   background: #fff;
   margin: 32px 0;
-  // .mdl-typography--title {
-  //   color: unquote("rgb(#{$color-accent-contrast})");
-  // }
   @include shadow-2dp();
 }
 
 .mdl-layout__content {
   top: - $layout-desktop-header-height;
-  padding-top: $layout-desktop-header-height;
   margin-bottom: - $layout-desktop-header-height;
-  padding-bottom: $music-player-height;
-  // background: unquote("rgb(#{$color-primary})");
-  background: #f4f4f4;
+  background-color: $global-bg-color;
   @media screen and (max-width: $layout-screen-size-threshold) {
     top: - $layout-mobile-header-height;
-    padding-top: $layout-mobile-header-height;
     margin-bottom: - $layout-mobile-header-height;
+  }
+
+  .page-content {
+    padding-top: $layout-desktop-header-height + $layout-tab-bar-height;
+    padding-bottom: $music-player-height;
+    @media screen and (max-width: $layout-screen-size-threshold) {
+      padding-top: $layout-mobile-header-height + $layout-tab-bar-height;
+    }
   }
 }
 
@@ -132,7 +131,7 @@ export default {
     width: $music-set-card-width;
     height: $music-set-card-height;
 
-    background-image: linear-gradient(to top, rgb(0, 0, 0), rgba(0, 0, 0, 0.5));
+    background-image: linear-gradient(to top, currentColor, rgba(0, 0, 0, 0.5));
     background-color: transparent;
   }
 
