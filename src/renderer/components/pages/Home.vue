@@ -71,7 +71,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "~@/assets/variables";
-@import "~material-design-lite/src/mixins";
+@import "~@/assets/mixins";
 
 .playlist-group {
   background: #fff;

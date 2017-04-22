@@ -41,3 +41,10 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
+
+@mixin no-underline-link() {
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+  }
+}

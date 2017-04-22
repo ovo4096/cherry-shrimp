@@ -5,23 +5,16 @@
         <div v-for="item in new Array(100)" class="album-card mdl-card mdl-shadow--2dp">
           <div class="mdl-card__media">
             <img src="~@/assets/album1.jpg">
-            <div class="album-info-card mdl-card">
-              <div class="mdl-card__title mdl-card--expand">
-                <h2 class="mdl-card__title-text">Guardians of the Galaxy: Awesome Mix Vol. 2</h2>
-              </div>
-              <div class="mdl-card__supporting-text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris sagittis pellentesque lacus eleifend lacinia...
-              </div>
-              <div class="mdl-card__actions">
-                <mdl-template>
-                  <button class="mdl-button mdl-button--fab mdl-button--primary mdl-button--icon mdl-js-button mdl-js-ripple-effect">
-                    <i class="material-icons">play_arrow</i>
-                  </button>
-                </mdl-template>
-              </div>
-            </div>
+            <mdl-template class="album-card__play-button">
+              <button class="mdl-button mdl-button--fab mdl-button--primary mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i class="material-icons">play_arrow</i></button>
+            </mdl-template>
+          </div>
+          <div class="mdl-card__title">
+            <a href="#" class="album-card__title-text">Guardians</a>
+            <a href="#" class="album-card__subtitle-text">Life in the 2k12</a>
           </div>
         </div>
+        <div v-for="item in new Array(10)" class="album-card-space"></div>
       </div>
     </div>
   </section>
@@ -41,6 +34,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "~@/assets/variables";
+@import "~@/assets/mixins";
 
 .page-content {
   padding: 16px 0;
@@ -52,8 +46,14 @@ export default {
     flex-wrap: wrap;
     padding: 8px;
   }
+
+  .album-card-space {
+    width: 200px;
+    margin: 0 8px;
+    flex-grow: 1;
+  }
   .album-card.mdl-card {
-    width: 240px;
+    width: 200px;
     min-height: auto;
     margin: 8px;
     flex-grow: 1;
@@ -63,19 +63,29 @@ export default {
         width: 100%;
       }
     }
-
-    .album-info-card.mdl-card {
-      background-color: rgba(0, 0, 0, .5);
+    .mdl-card__media {
+      position: relative;
+    }
+    .album-card__play-button {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      .mdl-card__title-text {
-        color: #fff;
+      bottom: 8px;
+      right: 8px;
+    } 
+    .mdl-card__title {
+      align-items: flex-start;
+      flex-direction: column;
+      .album-card__title-text {
+        @include typo-subhead();
+        @include typo-hidden-overflow();
+        color: #000;
+        @include no-underline-link();
       }
-      .mdl-card__supporting-text {
-        color: rgba(255, 255, 255, 0.54)
+      .album-card__subtitle-text {
+        margin-top: 4px;
+        @include typo-caption();
+        @include typo-hidden-overflow();
+        color: rgba(0, 0, 0, 0.54);
+        @include no-underline-link();
       }
     }
   }
