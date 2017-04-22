@@ -34,3 +34,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+@import "~@/assets/variables";
+
+.mdl-layout__content {
+  background-color: $global-bg-color;
+}
+</style>
