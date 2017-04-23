@@ -37,7 +37,7 @@
                   <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" :for="'song-menu-' + index">
                     <li class="mdl-menu__item">Play</li>
                     <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Add to queue</li>
-                    <li class="mdl-menu__item">Delete forever</li>
+                    <li class="mdl-menu__item">Remove from library</li>
                     <li class="mdl-menu__item">Download</li>
                   </ul>
                 </mdl-template>
