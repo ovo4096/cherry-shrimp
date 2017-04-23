@@ -14,7 +14,7 @@
             <a href="#" class="album-card__subtitle-text">Life in the 2k12</a>
           </div>
         </div>
-        <div v-for="item in new Array(10)" class="album-card-space"></div>
+        <div v-for="item in new Array(99)" class="album-card-spacer"></div>
       </div>
     </div>
   </section>
@@ -47,7 +47,7 @@ export default {
     padding: 8px;
   }
 
-  .album-card-space {
+  .album-card-spacer {
     width: 200px;
     margin: 0 8px;
     flex-grow: 1;
@@ -62,14 +62,18 @@ export default {
       img {
         width: 100%;
       }
-    }
-    .mdl-card__media {
       position: relative;
+
+      &:hover .album-card__play-button {
+        opacity: 1;
+      }
     }
     .album-card__play-button {
       position: absolute;
       bottom: 8px;
       right: 8px;
+      opacity: 0;
+      transition: opacity .25s ease-in-out;
     } 
     .mdl-card__title {
       align-items: flex-start;
