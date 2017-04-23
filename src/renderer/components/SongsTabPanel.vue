@@ -2,7 +2,7 @@
   <section class="mdl-layout__tab-panel songs-tab-panel">
     <div class="page-content">
       <mdl-template>
-        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
           <thead>
             <tr>
               <th class="mdl-data-table__cell--non-numeric min-cell">NAME</th>
@@ -13,7 +13,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="item in new Array(25)">
+            <tr v-for="(item, index) in new Array(25)">
               <td class="mdl-data-table__cell--non-numeric">
                 <div class="music-cover">
                   <img src="~@/assets/album1.jpg" alt="cover">
@@ -28,18 +28,19 @@
               <td class="mdl-data-table__cell--non-numeric"><a href="">BAKAEDITZ</a></td>
               <td class="mdl-data-table__cell--non-numeric"><a href="">Life in the 2k12</a></td>
               <td>
-                <div class="button-group">
-                  <mdl-template>
-                    <button class="mdl-button mdl-js-button mdl-button--icon">
-                      <i class="material-icons">delete_favorite</i>
-                    </button>
-                  </mdl-template>
-                  <mdl-template>
-                    <button class="mdl-button mdl-js-button mdl-button--icon">
-                      <i class="material-icons">file_download</i>
-                    </button>
-                  </mdl-template>
-                </div>
+                <mdl-template>
+                  <button :id="'song-menu-' + index" class="mdl-button mdl-js-button mdl-button--icon">
+                    <i class="material-icons">more_vert</i>
+                  </button>
+                </mdl-template>
+                <mdl-template class="song-menu">
+                  <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" :for="'song-menu-' + index">
+                    <li class="mdl-menu__item">Play</li>
+                    <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Add to queue</li>
+                    <li class="mdl-menu__item">Delete forever</li>
+                    <li class="mdl-menu__item">Download</li>
+                  </ul>
+                </mdl-template>
               </td>
             </tr>
           </tbody>
@@ -68,6 +69,18 @@ export default {
 
 .mdl-data-table td {
   border-bottom: none;
+}
+
+.songs-tab-panel .song-menu .mdl-menu__container {
+  overflow: hidden;
+  height: 0 !important;
+  // width: 0 !important;
+
+  &.is-visible {
+    overflow: visible;
+    height: auto;
+    // width: auto;
+  }
 }
 </style>
 
@@ -131,6 +144,12 @@ export default {
     .mdl-template {
       margin: 0 8px;
     }
+  }
+
+  .song-menu {
+    position: absolute;
+    top: 0;
+    right: 24px;
   }
 }
 </style>
