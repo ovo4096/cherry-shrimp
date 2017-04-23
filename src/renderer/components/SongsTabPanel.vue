@@ -86,6 +86,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "~@/assets/variables";
+@import "~@/assets/mixins";
 
 .songs-tab-panel {
   .page-content {
@@ -127,6 +128,13 @@ export default {
   .mdl-data-table tr:hover .music-cover .music-play-button {
     visibility: visible;
     opacity: 1;
+  }
+
+  .mdl-data-table td {
+    a {
+      @include no-underline-link();
+      color: #000;
+    }
   }
 
   .min-cell {

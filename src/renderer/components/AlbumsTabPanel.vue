@@ -11,7 +11,7 @@
           </div>
           <div class="mdl-card__title">
             <div class="album-card__title-text">Guardians</div>
-            <div class="album-card__subtitle-text">Life in the 2k12</div>
+            <div class="album-card__subtitle-text"><a href="">Life in the 2k12</a></div>
             <mdl-template class="album-card__menu-button">
               <button :id="'album-card-menu-' + index" class="mdl-button mdl-js-button mdl-button--icon">
                 <i class="material-icons">more_vert</i>
@@ -153,7 +153,10 @@ export default {
         margin-top: 4px;
         @include typo-caption();
         @include typo-hidden-overflow();
-        color: rgba(0, 0, 0, 0.54);
+        a {
+          @include no-underline-link();
+          color: rgba(0, 0, 0, 0.54);
+        }
       }
     }
   }

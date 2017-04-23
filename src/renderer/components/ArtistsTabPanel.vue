@@ -54,14 +54,14 @@ export default {
 
   .artist-card-spacer {
     width: 200px;
-    margin: 0 16px;
+    margin: 0 8px;
     flex-grow: 1;
   }
   .artist-card.mdl-card {
     cursor: pointer;
     width: 200px;
     min-height: auto;
-    margin: 16px;
+    margin: 8px;
     flex-grow: 1;
     flex-shrink: 1;
     overflow: visible;
@@ -70,6 +70,7 @@ export default {
     .artist-cover {
       @include shadow-2dp();
       border-radius: 50%;
+      margin: 16px;
       overflow: hidden;
       transition: box-shadow .25s ease-in-out;
       img {

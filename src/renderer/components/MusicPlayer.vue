@@ -252,6 +252,9 @@ $button-icon-offset: 8px;
         @include typo-caption();
         @include typo-hidden-overflow();
         margin-top: 4px;
+        a {
+          @include no-underline-link();
+        }
       }
     }
   }
