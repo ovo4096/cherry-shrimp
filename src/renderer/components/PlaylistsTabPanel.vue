@@ -2,7 +2,7 @@
   <section class="mdl-layout__tab-panel playlists-tab-panel">
     <div class="page-content">
       <div class="flow-grid">
-        <div v-for="(item, index) in new Array(50)" class="playlist-card mdl-card mdl-shadow--2dp">
+        <div v-for="(item, index) in new Array(25)" class="playlist-card mdl-card mdl-shadow--2dp">
           <div class="mdl-card__media">
             <img src="~@/assets/album1.jpg">
             <mdl-template class="playlist-card__play-button">
@@ -27,7 +27,7 @@
             </mdl-template>
           </div>
         </div>
-        <div v-for="item in new Array(49)" class="playlist-card-spacer"></div>
+        <div v-for="item in new Array(24)" class="playlist-card-spacer"></div>
       </div>
     </div>
   </section>

@@ -1,51 +1,62 @@
 <template>
   <section class="mdl-layout__tab-panel songs-tab-panel">
     <div class="page-content">
-      <mdl-template>
-        <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
-          <thead>
-            <tr>
-              <th class="mdl-data-table__cell--non-numeric min-cell">NAME</th>
-              <th class="mdl-data-table__cell--non-numeric"></th>
-              <th class="mdl-data-table__cell--non-numeric">ARTIST</th>
-              <th class="mdl-data-table__cell--non-numeric">ALBUM</th>
-              <th class="min-cell"></th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr v-for="(item, index) in new Array(25)">
-              <td class="mdl-data-table__cell--non-numeric">
-                <div class="music-cover">
-                  <img src="~@/assets/album1.jpg" alt="cover">
-                  <mdl-template class="music-play-button">
-                    <button class="mdl-button mdl-js-button mdl-button--icon">
-                      <i class="material-icons">play_circle_filled</i>
-                    </button>
-                  </mdl-template>
-                </div>
-              </td>
-              <td class="mdl-data-table__cell--non-numeric">Futurism Love (feat. Miku Hatsune)</td>
-              <td class="mdl-data-table__cell--non-numeric"><a href="">BAKAEDITZ</a></td>
-              <td class="mdl-data-table__cell--non-numeric"><a href="">Life in the 2k12</a></td>
-              <td>
-                <mdl-template>
-                  <button :id="'song-menu-' + index" class="mdl-button mdl-js-button mdl-button--icon">
-                    <i class="material-icons">more_vert</i>
-                  </button>
-                </mdl-template>
-                <mdl-template class="song-menu">
-                  <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" :for="'song-menu-' + index">
-                    <li class="mdl-menu__item">Play</li>
-                    <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Add to queue</li>
-                    <li class="mdl-menu__item">Remove from library</li>
-                    <li class="mdl-menu__item">Download</li>
-                  </ul>
-                </mdl-template>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </mdl-template>
+      <div class="mdl-grid">
+        <div class="mdl-cell mdl-cell--12-col">
+          <mdl-template class="text-right">
+            <button class="mdl-button mdl-button--accent mdl-button--raised mdl-js-button mdl-js-ripple-effect">
+              <i class="material-icons">shuffle</i> Shuffle all
+            </button>
+          </mdl-template>
+        </div>
+        <div class="mdl-cell mdl-cell--12-col">
+          <mdl-template>
+            <table class="mdl-data-table mdl-js-data-table mdl-shadow--2dp">
+              <thead>
+                <tr>
+                  <th class="mdl-data-table__cell--non-numeric min-cell">NAME</th>
+                  <th class="mdl-data-table__cell--non-numeric"></th>
+                  <th class="mdl-data-table__cell--non-numeric">ARTIST</th>
+                  <th class="mdl-data-table__cell--non-numeric">ALBUM</th>
+                  <th class="min-cell"></th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr v-for="(item, index) in new Array(25)">
+                  <td class="mdl-data-table__cell--non-numeric">
+                    <div class="music-cover">
+                      <img src="~@/assets/album1.jpg" alt="cover">
+                      <mdl-template class="music-play-button">
+                        <button class="mdl-button mdl-js-button mdl-button--icon">
+                          <i class="material-icons">play_circle_filled</i>
+                        </button>
+                      </mdl-template>
+                    </div>
+                  </td>
+                  <td class="mdl-data-table__cell--non-numeric">Futurism Love (feat. Miku Hatsune)</td>
+                  <td class="mdl-data-table__cell--non-numeric"><a href="">BAKAEDITZ</a></td>
+                  <td class="mdl-data-table__cell--non-numeric"><a href="">Life in the 2k12</a></td>
+                  <td>
+                    <mdl-template>
+                      <button :id="'song-menu-' + index" class="mdl-button mdl-js-button mdl-button--icon">
+                        <i class="material-icons">more_vert</i>
+                      </button>
+                    </mdl-template>
+                    <mdl-template class="song-menu">
+                      <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" :for="'song-menu-' + index">
+                        <li class="mdl-menu__item">Play</li>
+                        <li class="mdl-menu__item mdl-menu__item--full-bleed-divider">Add to queue</li>
+                        <li class="mdl-menu__item">Remove from library</li>
+                        <li class="mdl-menu__item">Download</li>
+                      </ul>
+                    </mdl-template>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </mdl-template>
+        </div>
+      </div>
     </div>
   </section>
 </template>
@@ -74,12 +85,9 @@ export default {
 .songs-tab-panel .song-menu .mdl-menu__container {
   overflow: hidden;
   height: 0 !important;
-  // width: 0 !important;
-
   &.is-visible {
     overflow: visible;
     height: auto;
-    // width: auto;
   }
 }
 </style>
@@ -90,7 +98,7 @@ export default {
 
 .songs-tab-panel {
   .page-content {
-    padding: 32px 16px;
+    padding: 16px 0;
   }
 
   .music-cover {

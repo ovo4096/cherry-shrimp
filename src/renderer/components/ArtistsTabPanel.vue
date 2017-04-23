@@ -2,7 +2,7 @@
   <section class="mdl-layout__tab-panel artists-tab-panel">
     <div class="page-content">
       <div class="flow-grid">
-        <div v-for="(item, index) in new Array(50)" class="artist-card mdl-card">
+        <div v-for="(item, index) in new Array(25)" class="artist-card mdl-card">
           <div class="artist-cover">
             <img src="~@/assets/album1.jpg">
           </div>
@@ -19,7 +19,7 @@
             </mdl-template>
           </mdl-template>
         </div>
-        <div v-for="item in new Array(49)" class="artist-card-spacer"></div>
+        <div v-for="item in new Array(24)" class="artist-card-spacer"></div>
       </div>
     </div>
   </section>
