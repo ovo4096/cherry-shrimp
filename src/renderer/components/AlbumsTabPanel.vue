@@ -4,13 +4,13 @@
       <div class="flow-grid">
         <div v-for="(item, index) in new Array(25)" class="album-card mdl-card mdl-shadow--2dp">
           <div class="mdl-card__media">
-            <img src="~@/assets/album1.jpg">
+            <img src="~@/assets/album1.jpg" @click.self="goToAlbum">
             <mdl-template class="album-card__play-button">
               <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i class="material-icons">play_arrow</i></button>
             </mdl-template>
           </div>
-          <div class="mdl-card__title">
-            <div class="album-card__title-text">Guardians</div>
+          <div class="mdl-card__title" @click.self="goToAlbum">
+            <div class="album-card__title-text" @click.self="goToAlbum">Guardians</div>
             <div class="album-card__subtitle-text"><a href="">Life in the 2k12</a></div>
             <mdl-template class="album-card__menu-button">
               <button :id="'album-card-menu-' + index" class="mdl-button mdl-js-button mdl-button--icon">
@@ -41,6 +41,11 @@ export default {
   components: {
     MdlTemplate,
     MdlTabPanel
+  },
+  methods: {
+    goToAlbum () {
+      this.$router.push({ name: 'Album' })
+    }
   }
 }
 </script>
