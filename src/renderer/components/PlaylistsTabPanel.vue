@@ -4,13 +4,13 @@
       <div class="flow-grid">
         <div v-for="(item, index) in new Array(25)" class="playlist-card mdl-card mdl-shadow--2dp">
           <div class="mdl-card__media">
-            <img src="~@/assets/album1.jpg">
+            <img src="~@/assets/album1.jpg" @click.self="goToPlaylist">
             <mdl-template class="playlist-card__play-button">
               <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect"><i class="material-icons">play_arrow</i></button>
             </mdl-template>
           </div>
-          <div class="mdl-card__title">
-            <div class="playlist-card__title-text">Guardians</div>
+          <div class="mdl-card__title" @click.self="goToPlaylist">
+            <div class="playlist-card__title-text" @click.self="goToPlaylist">Guardians</div>
             <div class="playlist-card__subtitle-text">Life in the 2k12</div>
             <mdl-template class="playlist-card__menu-button">
               <button :id="'playlist-card-menu-' + index" class="mdl-button mdl-js-button mdl-button--icon">
@@ -41,6 +41,11 @@ export default {
   components: {
     MdlTemplate,
     MdlTabPanel
+  },
+  methods: {
+    goToPlaylist () {
+      this.$router.push({ name: 'Playlist' })
+    }
   }
 }
 </script>

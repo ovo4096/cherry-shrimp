@@ -50,7 +50,6 @@
                     <th class="mdl-data-table__cell--non-numeric min-cell">NAME</th>
                     <th class="mdl-data-table__cell--non-numeric"></th>
                     <th class="mdl-data-table__cell--non-numeric">ARTIST</th>
-                    <th class="mdl-data-table__cell--non-numeric">ALBUM</th>
                     <th class="min-cell"></th>
                   </tr>
                 </thead>
@@ -68,7 +67,6 @@
                     </td>
                     <td class="mdl-data-table__cell--non-numeric">Futurism Love (feat. Miku Hatsune)</td>
                     <td class="mdl-data-table__cell--non-numeric"><a href="">BAKAEDITZ</a></td>
-                    <td class="mdl-data-table__cell--non-numeric"><a href="">Life in the 2k12</a></td>
                     <td>
                       <mdl-template>
                         <button :id="'song-menu-' + index" class="mdl-button mdl-js-button mdl-button--icon">
@@ -175,13 +173,16 @@ export default {
     display: flex;
     flex-direction: column;
     height: 200px;
-
+    min-width: 0;
+    
     .album-title {
       @include typo-headline();
+      @include typo-hidden-overflow();
       margin-bottom: 8px;
     }
     .album-artist {
       @include typo-caption();
+      @include typo-hidden-overflow();
       margin-bottom: 16px;
     }
     .album-intro-text {
