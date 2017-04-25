@@ -7,7 +7,7 @@
         <div class="mdl-grid">
           <div class="mdl-cell mdl-cell--12-col">
             <mdl-template>
-              <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-js-ripple-effect">
+              <button class="mdl-button mdl-js-button mdl-button--fab mdl-button--mini-fab mdl-button--colored mdl-js-ripple-effect" @click="back">
                 <i class="material-icons">arrow_back</i>
               </button>
             </mdl-template>
@@ -108,6 +108,11 @@ export default {
     Layout,
     HomeHeader,
     DrawerNavigation
+  },
+  methods: {
+    back () {
+      this.$router.go(-1)
+    }
   }
 }
 </script>
