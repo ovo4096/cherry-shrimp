@@ -88,7 +88,6 @@
             </mdl-template>
           </div>
         </div>
-        <router-link :to="{ name: 'Home'}">Album</router-link>
       </div>
     </main>
   </layout>

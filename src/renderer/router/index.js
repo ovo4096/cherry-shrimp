@@ -4,6 +4,7 @@ import Home from '@/components/pages/Home'
 import MusicLibrary from '@/components/pages/MusicLibrary'
 import Album from '@/components/pages/Album'
 import Playlist from '@/components/pages/Playlist'
+import Artist from '@/components/pages/Artist'
 
 Vue.use(Router)
 
@@ -28,6 +29,11 @@ export default new Router({
       path: '/playlist',
       name: 'Playlist',
       component: Playlist
+    },
+    {
+      path: '/artist',
+      name: 'Artist',
+      component: Artist
     }
   ]
 })

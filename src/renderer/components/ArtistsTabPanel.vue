@@ -4,9 +4,9 @@
       <div class="flow-grid">
         <div v-for="(item, index) in new Array(25)" class="artist-card mdl-card">
           <div class="artist-cover">
-            <img src="~@/assets/album1.jpg">
+            <img src="~@/assets/album1.jpg" @click.self="goToArtist">
           </div>
-          <div class="artist-name">モモバコ</div>
+          <div class="artist-name" @click.self="goToArtist">モモバコ</div>
           <mdl-template class="artist-card__menu-button">
             <button :id="'artist-card-menu-' + index" class="mdl-button mdl-js-button mdl-button--icon">
               <i class="material-icons">more_vert</i>
@@ -33,6 +33,11 @@ export default {
   components: {
     MdlTemplate,
     MdlTabPanel
+  },
+  methods: {
+    goToArtist () {
+      this.$router.push({ name: 'Artist' })
+    }
   }
 }
 </script>
