@@ -5,6 +5,7 @@ import MusicLibrary from '@/components/pages/MusicLibrary'
 import Album from '@/components/pages/Album'
 import Playlist from '@/components/pages/Playlist'
 import Artist from '@/components/pages/Artist'
+import Login from '@/components/pages/Login'
 
 Vue.use(Router)
 
@@ -34,6 +35,11 @@ export default new Router({
       path: '/artist',
       name: 'Artist',
       component: Artist
+    },
+    {
+      path: '/login',
+      name: 'Login',
+      component: Login
     }
   ]
 })

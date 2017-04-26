@@ -1,7 +1,7 @@
 <template>
   <div>
     <router-view></router-view>
-    <music-player></music-player>
+    <music-player v-if="isLogged"></music-player>
   </div>
 </template>
 
@@ -11,6 +11,9 @@ import MusicPlayer from '@/components/MusicPlayer'
 export default {
   components: {
     MusicPlayer
-  }
+  },
+  data: () => ({
+    isLogged: true
+  })
 }
 </script>
