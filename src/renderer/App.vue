@@ -13,7 +13,10 @@ export default {
     MusicPlayer
   },
   data: () => ({
-    isLogged: true
-  })
+    isLogged: false
+  }),
+  mounted () {
+    this.$router.push({ name: 'Login' })
+  }
 }
 </script>
